@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Welcome to Your Dashboard, {{session.user}}!</h1>
+
+  <a href="/newpost">Add New Post</a>
+  <a href="/logout">Logout</a>
+
+  {{#each userBlogPosts}}
+    <div class="user-blog-post">
+      <h2>{{title}}</h2>
+      <p>{{content}}</p>
+      <p>Date: {{createdAt}}</p>
+      <a href="/deletepost/{{title}}">Delete Post</a>
+    </div>
+  {{/each}}
+</body>
+</html>
